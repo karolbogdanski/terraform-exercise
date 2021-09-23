@@ -1,5 +1,5 @@
 resource "aws_iam_role" "read-s3-role" {
-  name = "read-s3-role"
+  name = var.role_name
 
   assume_role_policy = jsonencode({
 
@@ -13,11 +13,15 @@ resource "aws_iam_role" "read-s3-role" {
                 "s3:ListBucket"
             ],
             "Resource": [
-                "arn:aws:s3:::my-terra-bucket",
-                "arn:aws:s3:::*/*"
+                "arn:aws:s3:::my-terra-bucket/*"
             ]
         }
     ]
 
   })
+}
+
+resource "aws_iam_instance_profile" "test_profile" {
+  name = "test_profile"
+  role = "${aws_iam_role.read-s3-role.name}"
 }

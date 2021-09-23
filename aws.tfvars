@@ -9,4 +9,4 @@ public_subnet_cidr = "178.0.10.0/24"
 
 bucket_name = "my-terra-bucket"
 
-role_name = "read-s3-role"
+role_name = "read_s3_role"

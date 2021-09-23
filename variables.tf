@@ -25,4 +25,6 @@ variable "acl_value" {
     default = "private"
 }
 
-variable "role_name"{}
+variable "role_name"{
+    default = "test-role"
+}
