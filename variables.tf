@@ -24,3 +24,5 @@ variable "bucket_name" {
 variable "acl_value" {
     default = "private"
 }
+
+variable "role_name"{}
