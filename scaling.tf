@@ -3,7 +3,7 @@ resource "aws_launch_configuration" "kb_launch_config" {
   image_id             = var.ami_id
   instance_type   = var.instance_type
   key_name        = var.instance_key
-  security_groups = [aws_security_group.sg.id]
+  security_groups = [aws_security_group.sg.name]
   enable_monitoring      = true
   iam_instance_profile = aws_iam_instance_profile.test_profile.id
 

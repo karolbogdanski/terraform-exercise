@@ -6,8 +6,7 @@ instance_type = "t2.micro"
 instance_key = "first-key-pair"
 creds = "~/.aws/credentials"
 
-vpc_cidr = "178.0.0.0/16"
-public_subnet_cidr = "178.0.10.0/24"
+default_vpc_id = "vpc-d8ef86b3"
 
 bucket_name = "my-terra-bucket"
 

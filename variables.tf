@@ -14,13 +14,10 @@ default = "~/.aws/credentials"
 variable "instance_key" {
 default = "first-key-pair"
 }
-variable "vpc_cidr" {
-default = "178.0.0.0/16"
-}
-variable "public_subnet_cidr" {
-default = "178.0.10.0/24"
-}
 
+variable "default_vpc_id" {
+default= "vpc-d8ef86b3"
+}
 variable "bucket_name" {
     default = "my-terra-bucket"
 }

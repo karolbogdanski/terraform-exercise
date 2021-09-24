@@ -2,8 +2,7 @@ resource "aws_instance" "web" {
   ami             = var.ami_id 
   instance_type   = var.instance_type
   key_name        = var.instance_key
-  subnet_id       = aws_subnet.public_subnet.id
-  security_groups = [aws_security_group.sg.id]
+  security_groups = [aws_security_group.sg.name]
   iam_instance_profile = aws_iam_instance_profile.test_profile.id
 
   user_data = <<-EOF
