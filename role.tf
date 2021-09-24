@@ -4,7 +4,9 @@ resource "aws_iam_role" "read-s3-role" {
   assume_role_policy = jsonencode({
 
     "Version": "2012-10-17",
+    
     "Statement": [
+
         {
             "Sid": "VisualEditor0",
             "Effect": "Allow",
@@ -14,6 +16,9 @@ resource "aws_iam_role" "read-s3-role" {
             ],
             "Resource": [
                 "arn:aws:s3:::my-terra-bucket/*"
+            ]
+            "permissions_boundary": [
+                "arn:aws:iam::113304117666:policy/DefaultBoundaryPolicy"
             ]
         }
     ]
