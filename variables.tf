@@ -1,6 +1,10 @@
 variable "region" {
 default = "us-east-2"
 }
+
+variable "ami_id" {
+default = "ami-00dfe2c7ce89a450b"
+}
 variable "instance_type" {
 default = "t2.micro"
 }
@@ -8,7 +12,7 @@ variable "creds" {
 default = "~/.aws/credentials"
 }
 variable "instance_key" {
-default = "aws_ec2_pem_file_name2"
+default = "first-key-pair"
 }
 variable "vpc_cidr" {
 default = "178.0.0.0/16"
