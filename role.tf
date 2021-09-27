@@ -42,5 +42,5 @@ resource "aws_iam_role_policy_attachment" "attach" {
 
 resource "aws_iam_instance_profile" "test_profile" {
   name = "test_profile"
-  role = "${aws_iam_role.read_s3_role.name}"
+  role = aws_iam_role.read_s3_role.name
 }
