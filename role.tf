@@ -1,17 +1,21 @@
 resource "aws_iam_policy" "read_s3_policy" {
-  policy = jsonencode({
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
+  policy = data.aws_iam_policy_document.read_s3_policy_data.json
+}
+
+
+data "aws_iam_policy_document" "read_s3_policy_data" {
+      statement {
+        sid = "abc"
+
+        actions = [
                 "s3:Get*",
                 "s3:List*"
-            ],
-            "Resource": "arn:aws:s3:::my-terra-bucket/*"
-        }
-    ]
-  })
+        ]
+
+        resources = [
+          "arn:aws:s3:::${var.bucket_name}/*"
+        ]
+      }
 }
 
 resource "aws_iam_role" "read_s3_role" {
